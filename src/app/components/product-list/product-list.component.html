@@ -1,0 +1,14 @@
+<div [ngClass]="{ 'coming-soon-mode': comingSoon, 'product-grid-mode': !comingSoon }">
+  <div *ngIf="comingSoon" class="coming-soon-card">
+    <h2>SCUMSTORE</h2>
+    <h2>{{ 'SCUMSTORE.COMING_SOON' | translate }}</h2>
+  </div>
+
+  <div *ngIf="!comingSoon" class="product-grid">
+    <div *ngFor="let product of products" class="product-card">
+      <img [src]="product.imageUrl" alt="{{ product.nameKey | translate }}" />
+      <h2>{{ product.nameKey | translate }}</h2>
+      <p>{{ product.price | currency }}</p>
+    </div>
+  </div>
+</div>

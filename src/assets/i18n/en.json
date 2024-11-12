@@ -1,0 +1,36 @@
+{
+  "WELCOME": "Welcome to SCUMBAGS",
+  "SHOP": "Shop",
+  "CONTACT": {
+    "CONTACT": "Contact",
+    "YOUR_EMAIL": " Your email",
+    "EMAIL_TITLE": "Title",
+    "EMAIL_SUBJECT": "Description",
+    "SEND_EMAIL": "Send",
+    "YOUR_NAME": "Your name",
+    "EMAIL_SENT_SUCCESS": "Email sent! Oh Yeah!",
+    "EMAIL_SENT_ERROR": "Email wasn't sent, shit happens!"
+  },
+  "DISCOGRAPHY": "Discography",
+  "TOUR": {
+    "TOUR": "Tour",
+    "TICKET_TEXT": "TICKETS",
+    "RSVP_TEXT": "RSVP",
+    "FOLLOW_SECTION_HEADER": "Get updates on new shows, new music, and more",
+    "FOLLOW_CTA_TEXT": "FOLLOW",
+    "PLAY_MY_CITY_HEADER": "Don’t see a show near you?",
+    "PLAY_MY_CITY_CTA": "REQUEST A SHOW"
+  },
+  "LANGUAGE_CODE": "en",
+  "FOOTER": {
+    "SUBSCRIBE_MAIL": "Join the ScumNation",
+    "SUBSCRIBE": "Subscribe",
+    "EMAIL": "Enter your email address"
+  },
+  "SCUMSTORE": {
+    "COMING_SOON": "Coming Soon",
+    "RAT_ABDUCTION": "Rat Abduction",
+    "RAT_OVERLAY_BLACK": "Rat Overlay Black",
+    "RAT_OVERLAY_RED": "Rat Overlay Red"
+  }
+}

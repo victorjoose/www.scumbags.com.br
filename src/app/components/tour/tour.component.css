@@ -1,0 +1,23 @@
+:host {
+    display: block;
+    padding: 2rem;
+    background-color: #111111;
+    color: #fff;
+    text-align: center;
+  }
+  
+  .bit-widget-initializer {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .tour-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #ff0033;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+
+  

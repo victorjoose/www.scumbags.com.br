@@ -1,0 +1,46 @@
+<header>
+  <div class="header-content">
+    <div class="menu-button" (click)="toggleNavDropdown()" *ngIf="isMobile">
+      &#9776;
+    </div>
+
+    <a routerLink="/" class="logo-wrapper">
+      <img src="../../../assets/imgs/logos/orange-logo.png" alt="Band Logo" class="logo" />
+    </a>
+
+    <nav class="nav-links" *ngIf="!isMobile">
+      <a (click)="scrollTo('shop')">{{ 'SHOP' | translate }}</a>
+      <a (click)="scrollTo('tour')">{{ 'TOUR.TOUR' | translate }}</a>
+      <a (click)="openContactModal()">{{ 'CONTACT.CONTACT' | translate }}</a>
+    </nav>
+
+    <div class="lang-toggle" (click)="toggleLanguageDropdown()" *ngIf="!isMobile">
+      <img [src]="flagIcon" [alt]="altText" class="flag-icon" />
+			<div class="language-dropdown-menu" *ngIf="showLanguageDropdown">
+				<div class="dropdown-item" *ngIf="languageLabel === 'Português'" (click)="switchLanguage('en')">
+					<img src="../../../assets/imgs/flags/us.svg" alt="English Flag" class="flag-icon" />
+					<span>English</span>
+				</div>
+				<div class="dropdown-item" *ngIf="languageLabel === 'English'" (click)="switchLanguage('pt')">
+					<img src="../../../assets/imgs/flags/br.svg" alt="Portuguese Flag" class="flag-icon" />
+					<span>Português</span>
+				</div>
+			</div>
+    </div>
+  </div>
+</header>
+
+
+<div class="dropdown mobile-dropdown" *ngIf="isMobile && showNavDropdown">
+  <div class="dropdown-item" (click)="scrollTo('shop')">{{ 'LOJA' | translate }}</div>
+  <!-- <div class="dropdown-item" (click)="scrollTo('discography')">{{ 'DISCOGRAPHY' | translate }}</div> -->
+  <div class="dropdown-item" (click)="scrollTo('tour')">{{ 'TOUR.TOUR' | translate }}</div>
+  <div class="dropdown-item" (click)="openContactModal()">{{ 'CONTACT.CONTACT' | translate }}</div>
+</div>
+
+<app-contact
+  *ngIf="isContactModalOpen"
+  [isOpen]="isContactModalOpen"
+  (close)="closeContactModal()"
+></app-contact>
+

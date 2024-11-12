@@ -1,0 +1,139 @@
+header {
+  width: 100%;
+  padding: 1rem 2rem;
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.menu-button {
+  display: none;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.logo-wrapper {
+  margin-right: 2rem;
+}
+
+.logo {
+  height: 50px;
+  object-fit: contain;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-links a {
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #ff0033;
+}
+
+.lang-toggle {
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: #fff;
+  font-weight: bold;
+  margin-left: 2rem;
+}
+
+.flag-icon {
+  width: 24px;
+  height: auto;
+}
+
+.language-dropdown-menu {
+  position: absolute;
+  top: 50%;
+  transform: translateX(-75%) translateY(50%);
+  background-color: #333;
+  border: 1px solid #444;
+  padding: 1rem;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+  min-width: 150px;
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100%;
+}
+
+.dropdown-item:hover {
+  background-color: #555;
+}
+
+.dropdown-item .flag-icon {
+  width: 20px;
+  margin-right: 0.5em;
+}
+
+@media (max-width: 768px) {
+  .nav-links,
+  .lang-toggle {
+    display: none;
+  }
+
+  .menu-button {
+    display: block;
+  }
+
+  .logo-wrapper {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-top: 35px;
+  }
+
+  .mobile-dropdown {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 50%;
+    background-color: #333;
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 5;
+  }
+
+  .mobile-dropdown .dropdown-item {
+    font-size: 1.5rem;
+    justify-content: center; 
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+  }
+
+  .mobile-dropdown .dropdown-item:hover {
+    background-color: #555;
+  }
+}

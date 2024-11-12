@@ -1,0 +1,128 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modal-content {
+    background-color: #222;
+    padding: 2em;
+    border-radius: 8px;
+    max-width: 500px;
+    width: 100%;
+    position: relative;
+    color: #fff;
+  }
+  
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: #ff0033;
+    cursor: pointer;
+  }
+  
+  h2 {
+    display: block;
+    color: #ff0033;
+  }
+
+  form label {
+    display: block;
+    margin-top: 1em;
+    color: #ff0033;
+  }
+  
+  form input,
+  form textarea {
+    width: 100%;
+    padding: 0.5em;
+    margin-top: 0.5em;
+    background-color: #111;
+    border: 1px solid #333;
+    color: #fff;
+    border-radius: 4px;
+    resize: vertical;
+  }
+  
+  button[type="submit"] {
+    margin-top: 1em;
+    padding: 0.7em 1.5em;
+    background-color: #ff0033;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #00ffcc;
+  }
+  
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: opacity 0.5s ease;
+  }
+  
+  .modal-overlay.fade-out {
+    opacity: 0;
+  }
+  
+  .modal-content {
+    background-color: #222;
+    padding: 2em;
+    border-radius: 8px;
+    max-width: 500px;
+    width: 100%;
+    position: relative;
+    color: #fff;
+    text-align: center;
+  }
+  
+  .checkmark-animation, .error-animation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 2rem;
+    animation: scaleEffect 0.5s ease;
+  }
+  
+  @keyframes scaleEffect {
+    0% { transform: scale(0); }
+    100% { transform: scale(1); }
+  }
+  
+  .checkmark {
+    font-size: 4rem;
+    color: #4caf50;
+  }
+  
+  .error-mark {
+    font-size: 4rem;
+    color: #ff0033;
+  }
+  
+  .checkmark p, .error-mark p {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+  }

@@ -1,0 +1,32 @@
+<div class="modal-overlay" [class.fade-out]="!isOpen" (click)="closeModal()">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <button class="close-button" (click)="closeModal()">✕</button>
+    <h2 *ngIf="!emailSent && !emailError">{{ 'CONTACT.CONTACT' | translate }}</h2>
+    
+    <form *ngIf="!emailSent && !emailError" (ngSubmit)="sendEmail()">
+      <label for="name">{{ 'CONTACT.YOUR_NAME' | translate }}</label>
+      <input type="text" id="name" [(ngModel)]="name" name="name" required>
+
+      <label for="email">{{ 'CONTACT.YOUR_EMAIL' | translate }}</label>
+      <input type="email" id="email" [(ngModel)]="email" name="email" required>
+
+      <label for="title">{{ 'CONTACT.EMAIL_TITLE' | translate }}</label>
+      <input type="text" id="title" [(ngModel)]="title" name="title" required>
+
+      <label for="text">{{ 'CONTACT.EMAIL_SUBJECT' | translate }}</label>
+      <textarea id="text" [(ngModel)]="text" name="text" required></textarea>
+
+      <button type="submit">{{ 'CONTACT.SEND_EMAIL' | translate }}</button>
+    </form>
+
+    <div *ngIf="emailSent" class="checkmark-animation">
+      <div class="checkmark">&#10003;</div>
+      <p>{{ 'CONTACT.EMAIL_SENT_SUCCESS' | translate }}</p>
+    </div>
+
+    <div *ngIf="emailError" class="error-animation">
+      <div class="error-mark">&#10007;</div>
+      <p>{{ 'CONTACT.EMAIL_SENT_ERROR' | translate }}</p>
+    </div>
+  </div>
+</div>
