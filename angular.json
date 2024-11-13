@@ -30,27 +30,21 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
-                }
-              ],
-              "outputHashing": "all"
-            },
-            "development": {
-              "buildOptimizer": false,
-              "optimization": false,
-              "vendorChunk": true,
-              "extractLicenses": false,
-              "sourceMap": true,
-              "namedChunks": true
+              "buildOptimizer": true,
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildEnvironment": {
+                "VITE_EMAILJS_USER_ID": "${VITE_EMAILJS_USER_ID}",
+                "VITE_EMAILJS_SERVICE_ID": "${VITE_EMAILJS_SERVICE_ID}",
+                "VITE_EMAILJS_TEMPLATE_ID": "${VITE_EMAILJS_TEMPLATE_ID}",
+                "VITE_EMAILJS_TEMPLATE_2_ID": "${VITE_EMAILJS_TEMPLATE_2_ID}"
+              }
             }
           },
           "defaultConfiguration": "production"
@@ -76,18 +70,10 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
+            "polyfills": ["zone.js", "zone.js/testing"],
             "tsConfig": "tsconfig.spec.json",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.css"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
+            "styles": ["src/styles.css"],
             "scripts": []
           }
         }
