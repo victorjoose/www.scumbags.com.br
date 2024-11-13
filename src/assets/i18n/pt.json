@@ -1,8 +1,8 @@
 {
   "WELCOME": "Bem-vindo ao SCUMBAGS",
-  "SHOP": "Loja",
   "CONTACT": {
-    "CONTACT": "Contato",
+    "CONTACT": "CONTATO",
+    "CONTACT_TITLE": "Entre em contato com a Scumbags",
     "YOUR_EMAIL": " Seu e-mail",
     "EMAIL_TITLE": "Título",
     "EMAIL_SUBJECT": "Descrição",
@@ -13,7 +13,7 @@
   },
   "DISCOGRAPHY": "Discografia",
   "TOUR": {
-    "TOUR": "Turnê",
+    "TOUR": "TURNÊ",
     "TICKET_TEXT": "INGRESSOS",
     "RSVP_TEXT": "CONFIRME PRESENÇA",
     "FOLLOW_SECTION_HEADER": "Receba atualizações sobre novos shows, novas músicas e mais",
@@ -25,9 +25,11 @@
   "FOOTER": {
     "SUBSCRIBE_MAIL": "Junte-se à ScumNation",
     "SUBSCRIBE": "Inscrever-se",
-    "EMAIL": "Seu e-mail"
+    "EMAIL": "Seu e-mail",
+    "SOMETHING_WENT_WRONG": "Deu merda :("
   },
   "SCUMSTORE": {
+    "SCUMSTORE": "SCUMSTORE",
     "COMING_SOON": "Em Breve",
     "RAT_ABDUCTION": "Rato Abduzido",
     "RAT_OVERLAY_BLACK": "Rato Sobreposto Preto",

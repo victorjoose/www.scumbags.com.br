@@ -1,7 +1,7 @@
 <div [ngClass]="{ 'coming-soon-mode': comingSoon, 'product-grid-mode': !comingSoon }">
   <div *ngIf="comingSoon" class="coming-soon-card">
-    <h2>SCUMSTORE</h2>
-    <h2>{{ 'SCUMSTORE.COMING_SOON' | translate }}</h2>
+    <h2 class="store-title">SCUMSTORE</h2>
+    <h3>{{ 'SCUMSTORE.COMING_SOON' | translate }}</h3>
   </div>
 
   <div *ngIf="!comingSoon" class="product-grid">

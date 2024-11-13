@@ -31,7 +31,7 @@ export class ContactComponent {
       text: this.text
     };
 
-    this.emailService.sendEmail(templateParams)
+    this.emailService.sendContactEmail(templateParams)
       .then(() => {
         this.emailSent = true;
         setTimeout(() => {

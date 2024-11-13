@@ -1,8 +1,8 @@
 {
   "WELCOME": "Welcome to SCUMBAGS",
-  "SHOP": "Shop",
   "CONTACT": {
     "CONTACT": "Contact",
+    "CONTACT_TITLE": "Contact Scumbags",
     "YOUR_EMAIL": " Your email",
     "EMAIL_TITLE": "Title",
     "EMAIL_SUBJECT": "Description",
@@ -25,9 +25,11 @@
   "FOOTER": {
     "SUBSCRIBE_MAIL": "Join the ScumNation",
     "SUBSCRIBE": "Subscribe",
-    "EMAIL": "Enter your email address"
+    "EMAIL": "Enter your email address",
+    "SOMETHING_WENT_WRONG": "Shit Happens :("
   },
   "SCUMSTORE": {
+    "SCUMSTORE": "SCUMSTORE",
     "COMING_SOON": "Coming Soon",
     "RAT_ABDUCTION": "Rat Abduction",
     "RAT_OVERLAY_BLACK": "Rat Overlay Black",

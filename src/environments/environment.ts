@@ -2,5 +2,6 @@ export const environment = {
     production: false,
     emailServiceApiKey: '',
     serviceId: '',
-    templateId: ''
+    templateId: '',
+    template2Id: ''
   };
