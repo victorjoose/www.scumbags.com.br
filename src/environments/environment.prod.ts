@@ -1,5 +1,5 @@
 export const environment = {
-  production: false,
+  production: true,
   emailServiceApiKey: process.env['VITE_EMAILJS_USER_ID'],
   serviceId: process.env['VITE_EMAILJS_SERVICE_ID'],
   templateId: process.env['VITE_EMAILJS_TEMPLATE_ID'],
