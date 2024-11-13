@@ -21,10 +21,7 @@ export class LandingComponent {
 
     video.play().then(() => {
       this.videoStarted = true;
-      console.info("Video playback");
-    }).catch(error => {
-      console.warn("Video playback failed:", error);
-    });
+    }).catch();
   }
 
 }
