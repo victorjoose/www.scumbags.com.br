@@ -1,23 +1,17 @@
 import { Injectable } from '@angular/core';
-import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
-import { environment } from '../../environments/environment';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EmailService {
-  private userId = environment.emailServiceApiKey;
-  private serviceId = environment.serviceId;
-  private templateId = environment.templateId;
-  private template2Id = environment.template2Id;
+  constructor(private http: HttpClient) {}
 
-  sendContactEmail(templateParams: { name: string; email: string; title: string; text: string }): Promise<EmailJSResponseStatus> {
-    return emailjs.send(this.serviceId, this.templateId, templateParams, this.userId);
+  sendContactEmail(templateParams: { name: string; email: string; title: string; text: string }): Promise<any> {
+    return this.http.post('/api/sendEmail', templateParams).toPromise();
   }
 
-  sendSubscribeEmail(templateParams: { email: string }): Promise<EmailJSResponseStatus> {
-    return emailjs.send(this.serviceId, this.template2Id, templateParams, this.userId);
+  sendSubscribeEmail(templateParams: { email: string }): Promise<any> {
+    return this.http.post('/api/sendEmail', templateParams).toPromise();
   }
-
-
 }
