@@ -1,5 +1,5 @@
 const fs = require('fs');
-const path = './dist/[your_project_name]/assets/environment.js';
+const path = './dist/scumbags/assets/environment.js';
 
 console.log("Injecting environment variables...");
 
