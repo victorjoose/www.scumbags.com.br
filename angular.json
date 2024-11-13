@@ -27,7 +27,7 @@
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
+                  "with": "src/environments/environment.vercel.ts"
                 }
               ],
               "budgets": [
@@ -43,12 +43,6 @@
                 }
               ],
               "outputHashing": "all"
-            },
-            "buildEnvironment": {
-              "VITE_EMAILJS_USER_ID": "${VITE_EMAILJS_USER_ID}",
-              "VITE_EMAILJS_SERVICE_ID": "${VITE_EMAILJS_SERVICE_ID}",
-              "VITE_EMAILJS_TEMPLATE_ID": "${VITE_EMAILJS_TEMPLATE_ID}",
-              "VITE_EMAILJS_TEMPLATE_2_ID": "${VITE_EMAILJS_TEMPLATE_2_ID}"
             },
             "development": {
               "buildOptimizer": false,
