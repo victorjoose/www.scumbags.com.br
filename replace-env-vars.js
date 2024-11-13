@@ -1,29 +1,20 @@
 const fs = require('fs');
-const path = './dist/scumbags/assets/environment.js';
+const path = './dist/[your_project_name]/assets/environment.js';
 
-console.log('Replacing environment variables...');
-console.log('User ID:', process.env.VITE_EMAILJS_USER_ID);
-console.log('Service ID:', process.env.VITE_EMAILJS_SERVICE_ID);
-console.log('Template ID:', process.env.VITE_EMAILJS_TEMPLATE_ID);
-console.log('Template 2 ID:', process.env.VITE_EMAILJS_TEMPLATE_2_ID);
+console.log("Injecting environment variables...");
 
 fs.readFile(path, 'utf8', function (err, data) {
-  if (err) {
-    console.error('Error reading file:', err);
-    return;
-  }
+  if (err) return console.error("Error reading file:", err);
 
+  // Replace placeholders with Vercel environment variables
   let result = data
-    .replace(/VITE_EMAILJS_USER_ID_PLACEHOLDER/g, process.env.VITE_EMAILJS_USER_ID)
-    .replace(/VITE_EMAILJS_SERVICE_ID_PLACEHOLDER/g, process.env.VITE_EMAILJS_SERVICE_ID)
-    .replace(/VITE_EMAILJS_TEMPLATE_ID_PLACEHOLDER/g, process.env.VITE_EMAILJS_TEMPLATE_ID)
-    .replace(/VITE_EMAILJS_TEMPLATE_2_ID_PLACEHOLDER/g, process.env.VITE_EMAILJS_TEMPLATE_2_ID);
+    .replace(/VITE_EMAILJS_USER_ID/g, process.env.VITE_EMAILJS_USER_ID)
+    .replace(/VITE_EMAILJS_SERVICE_ID/g, process.env.VITE_EMAILJS_SERVICE_ID)
+    .replace(/VITE_EMAILJS_TEMPLATE_ID/g, process.env.VITE_EMAILJS_TEMPLATE_ID)
+    .replace(/VITE_EMAILJS_TEMPLATE_2_ID/g, process.env.VITE_EMAILJS_TEMPLATE_2_ID);
 
   fs.writeFile(path, result, 'utf8', function (err) {
-    if (err) {
-      console.error('Error writing file:', err);
-      return;
-    }
-    console.log('Environment variables replaced successfully.');
+    if (err) return console.error("Error writing file:", err);
+    console.log("Environment variables injected successfully.");
   });
 });
