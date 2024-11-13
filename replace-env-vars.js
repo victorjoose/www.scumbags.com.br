@@ -1,5 +1,5 @@
 const fs = require('fs');
-const path = './dist/your-project-name/assets/environment.vercel.js';
+const path = './dist/scumbags/assets/environment.vercel.js';
 
 console.log("Injecting Vercel environment variables...");
 
