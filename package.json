@@ -1,13 +1,13 @@
 {
   "name": "scumbags",
   "version": "0.0.0",
- "scripts": {
-  "ng": "ng",
-  "start": "node node.js && ng serve",
-  "build": "node node.js && ng build --configuration production",
-  "watch": "ng build --watch --configuration development",
-  "test": "ng test"
-},
+  "scripts": {
+    "ng": "ng",
+    "start": "node node.js && ng serve",
+    "build": "node node.js && ng build --configuration production",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "^16.2.0",
@@ -22,6 +22,7 @@
     "@ngx-translate/http-loader": "^16.0.0",
     "dotenv": "^16.4.5",
     "emailjs-com": "^3.2.0",
+    "node-fetch": "^3.3.2",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"
