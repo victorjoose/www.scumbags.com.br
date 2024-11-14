@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
-import { environment } from '../../environments/environment.development';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -18,6 +18,4 @@ export class EmailService {
   sendSubscribeEmail(templateParams: { email: string }): Promise<EmailJSResponseStatus> {
     return emailjs.send(this.serviceId, this.template2Id, templateParams, this.userId);
   }
-
-
 }

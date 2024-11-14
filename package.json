@@ -1,13 +1,13 @@
 {
   "name": "scumbags",
   "version": "0.0.0",
-  "scripts": {
-    "ng": "ng",
-    "start": "node -r dotenv/config mynode.js && ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test"
-  },
+ "scripts": {
+  "ng": "ng",
+  "start": "node node.js && ng serve",
+  "build": "node node.js && ng build --configuration production",
+  "watch": "ng build --watch --configuration development",
+  "test": "ng test"
+},
   "private": true,
   "dependencies": {
     "@angular/animations": "^16.2.0",
