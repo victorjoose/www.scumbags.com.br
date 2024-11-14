@@ -8,6 +8,10 @@ header {
   z-index: 3;
 }
 
+a {
+  cursor: pointer;
+}
+
 .header-content {
   display: flex;
   align-items: center;

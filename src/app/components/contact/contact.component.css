@@ -127,3 +127,11 @@
     margin-top: 1rem;
     font-size: 1.2rem;
   }
+
+  .contact-header {
+    display: flex;
+  }
+
+  .pidgeon {
+    height: 60px;
+  }
