@@ -1,7 +1,12 @@
 <div class="modal-overlay" [class.fade-out]="!isOpen" (click)="closeModal()">
   <div class="modal-content" (click)="$event.stopPropagation()">
     <button class="close-button" (click)="closeModal()">✕</button>
-    <h2 *ngIf="!emailSent && !emailError">{{ 'CONTACT.CONTACT_TITLE' | translate }}</h2>
+
+    <div class="contact-header">
+      <img src="assets/imgs/logos/pidgeon3.png" alt="Pidgeon" class="pidgeon" />
+      <h2 *ngIf="!emailSent && !emailError">{{ 'CONTACT.CONTACT_TITLE' | translate }}</h2>
+      <img src="assets/imgs/logos/pidgeon3.png" alt="Pidgeon" class="pidgeon" />
+    </div>
     
     <form *ngIf="!emailSent && !emailError" (ngSubmit)="sendEmail()">
       <label for="name">{{ 'CONTACT.YOUR_NAME' | translate }}</label>
