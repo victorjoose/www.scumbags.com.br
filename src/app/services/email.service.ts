@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
-import { environment } from '../../environments/environment';
+import { environment } from '../../environments/environment.development';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +12,7 @@ export class EmailService {
   private template2Id = environment.VITE_EMAILJS_TEMPLATE_2_ID;
 
   sendContactEmail(templateParams: { name: string; email: string; title: string; text: string }): Promise<EmailJSResponseStatus> {
+    console.log(environment.VITE_EMAILJS_TEMPLATE_ID)
     return emailjs.send(this.serviceId, this.templateId, templateParams, this.userId);
   }
 
