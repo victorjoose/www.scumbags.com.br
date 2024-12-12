@@ -1,7 +1,7 @@
 {
   "WELCOME": "Welcome to SCUMBAGS",
   "CONTACT": {
-    "CONTACT": "Contact",
+    "CONTACT": "CONTACT",
     "CONTACT_TITLE": "Contact Scumbags",
     "YOUR_EMAIL": " Your email",
     "EMAIL_TITLE": "Title",
@@ -13,7 +13,7 @@
   },
   "DISCOGRAPHY": "Discography",
   "TOUR": {
-    "TOUR": "Tour",
+    "TOUR": "TOUR",
     "TICKET_TEXT": "TICKETS",
     "RSVP_TEXT": "RSVP",
     "FOLLOW_SECTION_HEADER": "Get updates on new shows, new music, and more",
