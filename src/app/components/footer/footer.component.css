@@ -81,4 +81,12 @@ footer {
   }
   
   
+  @media (max-width: 768px) {
+    .subscribe-email {
+      margin-bottom: 10px;
+      margin-right: 0em !important;
+    }
+    
+  }
+  
   
