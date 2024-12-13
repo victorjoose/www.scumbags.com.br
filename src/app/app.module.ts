@@ -12,10 +12,18 @@ import { LandingComponent } from './components/landing/landing.component';
 import { TourComponent } from './components/tour/tour.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { FormsModule } from '@angular/forms';
+import { ScumstoreComponent } from './components/scumstore/scumstore.component';
+import { Routes, RouterModule  } from '@angular/router';
+import { HomeComponent } from './components/home/home.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, '/assets/i18n/', '.json');
 }
+
+const routes: Routes = [
+  { path: '', component: HomeComponent },
+  { path: 'store', component: ScumstoreComponent }
+]
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +32,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     FooterComponent,
     LandingComponent,
     TourComponent,
-    ContactComponent
+    ContactComponent,
+    ScumstoreComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +47,8 @@ export function HttpLoaderFactory(http: HttpClient) {
         useFactory: HttpLoaderFactory,
         deps: [HttpClient]
       }
-    })
+    }),
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]

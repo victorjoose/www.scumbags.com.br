@@ -1,0 +1,9 @@
+<div class="product-grid-mode">
+    <div class="product-grid">
+        <div *ngFor="let product of products" class="product-card">
+          <img [src]="product.imageUrl" alt="{{ product.nameKey | translate }}" />
+          <h2>{{ product.nameKey | translate }}</h2>
+          <p>{{ getProductPrice(product) | currency: currencyCode }}</p>
+        </div>
+      </div>
+</div>
