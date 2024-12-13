@@ -1,6 +1,6 @@
 <footer>
     <h3>{{'FOOTER.SUBSCRIBE_MAIL' | translate }}</h3>
-    <input type="email" placeholder="{{'FOOTER.EMAIL' | translate }}" [(ngModel)]="email" />
+    <input class="subscribe-email" type="email" placeholder="{{'FOOTER.EMAIL' | translate }}" [(ngModel)]="email" />
 
     <button 
     (click)="sendSubscriptionEmail()" 
