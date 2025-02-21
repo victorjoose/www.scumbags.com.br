@@ -1,6 +1,7 @@
 <div [ngClass]="{ 'coming-soon-mode': comingSoon, 'product-grid-mode': !comingSoon }">
   <div *ngIf="comingSoon" class="coming-soon-card">
     <h2 class="store-title">SCUMSTORE</h2>
+    <img src="assets/imgs/logos/pidgeon3.png" alt="Pidgeon" class="pidgeon" />
     <h3>{{ 'SCUMSTORE.COMING_SOON' | translate }}</h3>
   </div>
 
