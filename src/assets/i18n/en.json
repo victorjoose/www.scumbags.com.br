@@ -18,7 +18,7 @@
     "RSVP_TEXT": "RSVP",
     "FOLLOW_SECTION_HEADER": "Get updates on new shows, new music, and more",
     "FOLLOW_CTA_TEXT": "FOLLOW",
-    "PLAY_MY_CITY_HEADER": "Don’t see a show near you?",
+    "PLAY_MY_CITY_HEADER": "Don't see a show near you?",
     "PLAY_MY_CITY_CTA": "REQUEST A SHOW"
   },
   "LANGUAGE_CODE": "en",
@@ -33,6 +33,10 @@
     "COMING_SOON": "Coming Soon",
     "RAT_ABDUCTION": "Rat Abduction",
     "RAT_OVERLAY_BLACK": "Rat Overlay Black",
-    "RAT_OVERLAY_RED": "Rat Overlay Red"
+    "RAT_OVERLAY_RED": "Rat Overlay Red",
+    "VIEW_DETAILS": "View Details",
+    "CLICK_TO_VIEW": "Click to view alternate image",
+    "SELECT_SIZE": "Select Size",
+    "ADD_TO_CART": "Add to Cart"
   }
 }

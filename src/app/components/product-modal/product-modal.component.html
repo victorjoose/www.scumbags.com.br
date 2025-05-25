@@ -1,0 +1,32 @@
+<div class="modal-overlay" (click)="closeModal()">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <button class="close-button" (click)="closeModal()">✕</button>
+    
+    <div class="product-details">
+      <div class="product-images">
+        <img [src]="currentImage" alt="{{ product.nameKey | translate }}" (click)="toggleImage()" />
+        <p class="image-hint">{{ 'SCUMSTORE.CLICK_TO_VIEW' | translate }}</p>
+      </div>
+      
+      <div class="product-info">
+        <h2>{{ product.nameKey | translate }}</h2>
+        <p class="price">{{ product.price | currency }}</p>
+        
+        <div class="size-selector">
+          <label>{{ 'SCUMSTORE.SELECT_SIZE' | translate }}</label>
+          <div class="size-options">
+            <button *ngFor="let size of product.sizes" 
+                    [class.selected]="selectedSize === size"
+                    (click)="selectedSize = size">
+              {{ size }}
+            </button>
+          </div>
+        </div>
+        
+        <button class="add-to-cart" [disabled]="!selectedSize">
+          {{ 'SCUMSTORE.ADD_TO_CART' | translate }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
