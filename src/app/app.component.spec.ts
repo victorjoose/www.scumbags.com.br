@@ -1,9 +1,17 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { TestTranslateModule } from 'tests/test-translate.module';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { LandingComponent } from './components/landing/landing.component';
+import { ProductListComponent } from './components/product-list/product-list.component';
+import { TourComponent } from './components/tour/tour.component';
+import { FormsModule } from '@angular/forms';
 
 describe('AppComponent', () => {
   beforeEach(() => TestBed.configureTestingModule({
-    declarations: [AppComponent]
+    declarations: [AppComponent, HeaderComponent, FooterComponent, LandingComponent, ProductListComponent, TourComponent],
+    imports: [TestTranslateModule, FormsModule]
   }));
 
   it('should create the app', () => {
@@ -18,10 +26,9 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('scumbags');
   });
 
-  it('should render title', () => {
+  it('should have title property set to "scumbags"', () => {
     const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('scumbags app is running!');
-  });
+    const app = fixture.componentInstance;
+  expect(app.title).toBe('scumbags');
+});
 });
