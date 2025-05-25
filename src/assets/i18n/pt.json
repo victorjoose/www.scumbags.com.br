@@ -33,6 +33,10 @@
     "COMING_SOON": "Em Breve",
     "RAT_ABDUCTION": "Rato Abduzido",
     "RAT_OVERLAY_BLACK": "Rato Sobreposto Preto",
-    "RAT_OVERLAY_RED": "Rato Sobreposto Bordô"
+    "RAT_OVERLAY_RED": "Rato Sobreposto Bordô",
+    "VIEW_DETAILS": "Ver Detalhes",
+    "CLICK_TO_VIEW": "Clique para ver imagem alternativa",
+    "SELECT_SIZE": "Selecione o Tamanho",
+    "ADD_TO_CART": "Adicionar ao Carrinho"
   }
 }

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -12,10 +13,18 @@ import { LandingComponent } from './components/landing/landing.component';
 import { TourComponent } from './components/tour/tour.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { FormsModule } from '@angular/forms';
+import { StorePageComponent } from './components/store-page/store-page.component';
+import { ProductModalComponent } from './components/product-modal/product-modal.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, '/assets/i18n/', '.json');
 }
+
+const routes: Routes = [
+  { path: '', component: AppComponent },
+  { path: 'scumstore', component: StorePageComponent }
+];
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,12 +33,15 @@ export function HttpLoaderFactory(http: HttpClient) {
     FooterComponent,
     LandingComponent,
     TourComponent,
-    ContactComponent
+    ContactComponent,
+    StorePageComponent,
+    ProductModalComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
+    RouterModule.forRoot(routes),
     TranslateModule.forRoot({
       defaultLanguage: 'pt',
       loader: {

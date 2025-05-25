@@ -1,0 +1,20 @@
+<div class="store-container">
+  <h1>{{ 'SCUMSTORE.SCUMSTORE' | translate }}</h1>
+  
+  <div class="product-grid">
+    <div *ngFor="let product of products" class="product-card" (click)="openProductModal(product.id)">
+      <img [src]="product.imageUrl" alt="{{ product.nameKey | translate }}" />
+      <h2>{{ product.nameKey | translate }}</h2>
+      <p class="price">{{ product.price | currency }}</p>
+      <button class="view-details">{{ 'SCUMSTORE.VIEW_DETAILS' | translate }}</button>
+    </div>
+  </div>
+</div>
+
+<app-product-modal
+  *ngIf="showModal"
+  [product]="getSelectedProduct()"
+  (close)="closeModal()"
+></app-product-modal>
+
+<app-footer></app-footer>
