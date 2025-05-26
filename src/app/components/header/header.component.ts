@@ -1,4 +1,5 @@
 import { Component, HostListener } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { LanguageService } from 'src/app/services/language.service';
 
@@ -17,7 +18,9 @@ export class HeaderComponent {
   languageLabel = 'Português';
 
   constructor(
-    private languageService: LanguageService
+    private languageService: LanguageService,
+    private router: Router,
+    private route: ActivatedRoute
   ) {
     this.checkScreenSize();
   }
@@ -75,15 +78,28 @@ export class HeaderComponent {
     }
   }
 
-  scrollTo(id: string): void {
+scrollTo(id: string): void {
+  const isOnHomePage = this.router.url === '/';
+
+  if (isOnHomePage) {
     const section = document.getElementById(id);
     if (section) {
       section.scrollIntoView({ behavior: 'smooth' });
     }
-    this.showNavDropdown = false;
-    this.showLanguageDropdown = false;
+  } else {
+    window.location.href = `/?scrollTo=${id}`;
   }
 
+  this.showNavDropdown = false;
+  this.showLanguageDropdown = false;
+}
+
+  private scrollToElement(id: string): void {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
   switchLanguage(language: string): void {
     this.languageService.setLanguage(language);  
     setTimeout(() => {
