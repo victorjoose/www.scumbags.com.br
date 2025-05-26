@@ -1,14 +1,14 @@
-import { Component, HostListener } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { TranslateService } from '@ngx-translate/core';
+import { Component, HostListener, OnInit } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
 import { LanguageService } from 'src/app/services/language.service';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
   showLanguageDropdown = false;
   showNavDropdown = false;
   isMobile = false;
@@ -16,11 +16,13 @@ export class HeaderComponent {
   flagIcon = 'assets/imgs/flags/br.svg';
   altText = 'Portuguese Flag';
   languageLabel = 'Português';
+  cartItemCount = 0;
+  showCart = false;
 
   constructor(
     private languageService: LanguageService,
+    private cartService: CartService,
     private router: Router,
-    private route: ActivatedRoute
   ) {
     this.checkScreenSize();
   }
@@ -37,6 +39,17 @@ export class HeaderComponent {
         this.languageLabel = 'Português';
       }
     });
+
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        this.showCart = event.urlAfterRedirects.includes('/store');
+      }
+    });
+
+
+    this.cartService.cart$.subscribe(items => {
+      this.cartItemCount = items.length;
+    });
   }
 
   @HostListener('window:resize', ['$event'])
@@ -46,9 +59,7 @@ export class HeaderComponent {
 
   checkScreenSize() {
     this.isMobile = window.innerWidth <= 768;
-    if (!this.isMobile) {
-      this.showNavDropdown = false;
-    }
+    if (!this.isMobile) this.showNavDropdown = false;
   }
 
   toggleNavDropdown() {
@@ -73,37 +84,33 @@ export class HeaderComponent {
     if (!target.closest('.mobile-dropdown') && !target.closest('.menu-button')) {
       this.showNavDropdown = false;
     }
-    if (!target.closest('.language-dropdown-menu')&& !target.closest('.lang-toggle')) {
+    if (!target.closest('.language-dropdown-menu') && !target.closest('.lang-toggle')) {
       this.showLanguageDropdown = false;
     }
   }
 
-scrollTo(id: string): void {
-  const isOnHomePage = this.router.url === '/';
+  scrollTo(id: string): void {
+    const isOnHomePage = this.router.url === '/';
 
-  if (isOnHomePage) {
-    const section = document.getElementById(id);
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
+    if (isOnHomePage) {
+      const section = document.getElementById(id);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      location.href = `/?scrollTo=${id}`;
     }
-  } else {
-    window.location.href = `/?scrollTo=${id}`;
+
+    this.showNavDropdown = false;
+    this.showLanguageDropdown = false;
   }
 
-  this.showNavDropdown = false;
-  this.showLanguageDropdown = false;
-}
-
-  private scrollToElement(id: string): void {
-    const section = document.getElementById(id);
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
-    }
-  }
   switchLanguage(language: string): void {
-    this.languageService.setLanguage(language);  
-    setTimeout(() => {
-      this.showLanguageDropdown = false;
-    }, 0);
+    this.languageService.setLanguage(language);
+    setTimeout(() => (this.showLanguageDropdown = false), 0);
+  }
+
+  goToCart() {
+    this.router.navigate(['/checkout']);
   }
 }

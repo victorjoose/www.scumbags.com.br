@@ -13,8 +13,10 @@ import { TourComponent } from './components/tour/tour.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { FormsModule } from '@angular/forms';
 import { ProductModalComponent } from './components/product-modal/product-modal.component';
-import { HomeComponent } from './components/home/home.component';
-import { ScumstoreComponent } from './components/scumstore/scumstore.component';
+import { HomeComponent } from './pages/home/home.component';
+import { ScumstoreComponent } from './pages/scumstore/scumstore.component';
+import { CheckoutComponent } from './pages/checkout/checkout.component';
+import { ToastComponent } from './components/toast/toast.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, '/assets/i18n/', '.json');
@@ -22,7 +24,8 @@ export function HttpLoaderFactory(http: HttpClient) {
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'store', component: ScumstoreComponent }
+  { path: 'store', component: ScumstoreComponent },
+  { path: 'checkout', component: CheckoutComponent }
 ];
 
 @NgModule({
@@ -36,7 +39,9 @@ const routes: Routes = [
     ContactComponent,
     HomeComponent,
     ScumstoreComponent,
-    ProductModalComponent
+    ProductModalComponent,
+    CheckoutComponent,
+    ToastComponent
   ],
   imports: [
     BrowserModule,

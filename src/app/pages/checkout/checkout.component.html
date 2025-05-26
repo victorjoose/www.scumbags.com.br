@@ -1,0 +1,91 @@
+<div class="checkout-wrapper">
+  <div class="checkout-container">
+    <h1>{{ 'SCUMSTORE.CHECKOUT' | translate }}</h1>
+
+    <div class="cart-table-container" *ngIf="cartItems.length > 0; else emptyCart">
+      <table class="cart-table">
+        <tbody>
+         <tr *ngFor="let item of cartItems; index as i">
+          <td><img [src]="item.imageUrl" class="thumbnail" /></td>
+          <td>{{ item.nameKey | translate }} {{ 'SCUMSTORE.SIZE_' + item.size | translate }}</td>
+          <td>{{ getProductPrice(item) | currency: currencyCode }}</td>
+          <td>
+            <button (click)="removeItem(i)">
+              {{ 'CART.REMOVE' | translate }}
+            </button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <ng-template #emptyCart>
+      <p>{{ 'SCUMSTORE.EMPTY_CART' | translate }}</p>
+    </ng-template>
+
+    <form *ngIf="cartItems.length > 0" (ngSubmit)="submitCheckout()" #checkoutForm="ngForm" class="checkout-form">
+      <h2>{{ 'SCUMSTORE.BUYER_INFORMATION' | translate }}</h2>
+
+      <div class="form-row">
+        <label>
+          {{ 'SCUMSTORE.NAME' | translate }}
+          <input name="name" [(ngModel)]="buyer.name" required />
+        </label>
+  
+        <label>
+          {{ 'SCUMSTORE.EMAIL' | translate }}
+          <input name="email" [(ngModel)]="buyer.email" type="email" required />
+        </label>
+      </div>
+
+      <label>
+        {{ 'SCUMSTORE.STREET' | translate }}
+        <input name="street" [(ngModel)]="buyer.street" required />
+      </label>
+
+      <div class="form-row">
+        <label>
+          {{ 'SCUMSTORE.CITY' | translate }}
+          <input name="city" [(ngModel)]="buyer.city" required />
+        </label>
+        <label>
+          {{ 'SCUMSTORE.STATE' | translate }}
+          <input name="state" [(ngModel)]="buyer.state" required />
+        </label>
+      </div>
+
+      <label>
+        {{ 'SCUMSTORE.ZIP' | translate }}
+        <input name="zip" [(ngModel)]="buyer.zip" required />
+      </label>
+
+      <h2>{{ 'SCUMSTORE.PAYMENT_INFORMATION' | translate }}</h2>
+
+      <div class="form-row">
+        <label>
+          {{ 'SCUMSTORE.CARD_NUMBER' | translate }}
+          <input name="cardNumber" [(ngModel)]="buyer.cardNumber" required maxlength="19" />
+        </label>
+  
+        <label>
+          {{ 'SCUMSTORE.CARD_NAME' | translate }}
+          <input name="cardName" [(ngModel)]="buyer.cardName" required />
+        </label>
+      </div>
+
+      <div class="form-row">
+        <label>
+          {{ 'SCUMSTORE.EXPIRY' | translate }}
+          <input name="expiry" [(ngModel)]="buyer.expiry" placeholder="MM/YY" required />
+        </label>
+        <label>
+          {{ 'SCUMSTORE.CVV' | translate }}
+          <input name="cvv" [(ngModel)]="buyer.cvv" required maxlength="4" />
+        </label>
+      </div>
+
+      <button type="submit">{{ 'SCUMSTORE.PLACE_ORDER' | translate }}</button>
+    </form>
+
+  </div>
+</div>
