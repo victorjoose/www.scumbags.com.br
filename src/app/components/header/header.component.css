@@ -29,7 +29,6 @@ a {
 }
 
 .logo-wrapper {
-  /* On larger screens, the logo stays on the left */
   margin-right: 2rem;
 }
 
@@ -102,6 +101,43 @@ a {
   margin-right: 0.5em;
 }
 
+.cart-button-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.cart-button {
+  position: relative;
+  background: none;
+  border: none;
+  color: #ff0033;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 1rem;
+}
+
+.cart-icon-wrapper {
+  position: relative;
+  display: inline-block;
+  font-size: 1.2rem;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background-color: red;
+  color: white;
+  font-size: 0.7rem;
+  font-weight: bold;
+  border-radius: 50%;
+  padding: 2px 6px;
+  line-height: 1;
+}
 /* Mobile Styles */
 @media (max-width: 768px) {
   .nav-links {
@@ -168,4 +204,55 @@ a {
   .dropdown-item:hover {
     background-color: #555;
   }
+
+  .dropdown-item {
+  position: relative;
+  padding: 1em;
+  color: white;
+  cursor: pointer;
+}
+
+.cart-button-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.cart-button {
+  position: relative;
+  background: none;
+  border: none;
+  color: #ff0033;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 1rem;
+}
+
+.cart-icon-wrapper {
+  position: relative;
+  display: inline-block;
+  font-size: 1.2rem;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background-color: red;
+  color: white;
+  font-size: 0.7rem;
+  font-weight: bold;
+  border-radius: 50%;
+  padding: 2px 6px;
+  line-height: 1;
+}
+
+.cart-label {
+  font-size: 1rem;
+}
+
+
 }

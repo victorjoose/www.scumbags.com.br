@@ -1,0 +1,154 @@
+.checkout-wrapper {
+    min-height: 100vh;
+    background-color: #111;
+    padding: 5em 1em 2em;
+    display: flex;
+    justify-content: center;
+}
+
+.checkout-container {
+  display: flex;
+  gap: 3em;
+  max-width: 1200px;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+h1 {
+  width: 100%;
+  text-align: center;
+  font-size: 2.5rem;
+  font-family: 'Montserrat', sans-serif;
+  color: #ff0033;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  color: #fff;
+  text-align: center;
+  width: 100%;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.3rem;
+}
+
+.checkout-form {
+  flex: 2;
+  background-color: #222;
+  padding: 2em;
+  border-radius: 8px;
+  border: 1px solid #333;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+
+.checkout-form label {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  color: #fff;
+}
+
+.checkout-form input {
+  margin-top: 0.5rem;
+  padding: 0.7rem;
+  border: 1px solid #444;
+  border-radius: 4px;
+  background-color: #1a1a1a;
+  color: white;
+}
+
+.checkout-form button {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: #ff0033;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.checkout-form button:hover {
+  background-color: #00ffcc;
+  color: black;
+}
+
+.cart-table-container {
+  flex: 2;
+  max-height: 500px;
+  overflow-y: auto;
+  background-color: #222;
+  border-radius: 8px;
+  border: 1px solid #333;
+  padding: 1rem;
+}
+
+.cart-table {
+  width: 100%;
+  border-collapse: collapse;
+  color: white;
+}
+
+.cart-table td {
+  padding: 0.4rem 0.6rem;
+  font-size: 0.85rem;
+  line-height: 1.2;
+}
+
+
+.thumbnail {
+  width: 44px;
+  border-radius: 3px;
+}
+
+.cart-table button {
+  background-color: transparent;
+  border: 1px solid #ff0033;
+  color: #ff0033;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cart-table button:hover {
+  background-color: #ff0033;
+  color: white;
+}
+
+.cart-table td {
+  padding: 0.5rem 0.6rem;
+  font-size: 0.9rem;
+}
+
+.thumbnail {
+  width: 70px;
+}
+
+.form-row {
+  display: flex;
+  gap: 1rem;
+}
+
+.form-row label {
+  flex: 1;
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+  .checkout-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .cart-table-container {
+    max-height: 300px;
+    margin-bottom: 1rem;
+  }
+}

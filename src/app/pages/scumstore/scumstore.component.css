@@ -1,7 +1,7 @@
 .store-container {
   min-height: 100vh;
   background-color: #111;
-  padding: 6em 2em 2em;
+  padding: 6em 2em 0em 2em;
 }
 
 h1 {
@@ -14,10 +14,11 @@ h1 {
 
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2em;
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
+  justify-items: center;
 }
 
 .product-card {
@@ -79,10 +80,14 @@ h1 {
     padding: 5em 1em 1em;
   }
 
-  .product-grid {
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 1em;
-  }
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2em;
+  max-width: 1200px;
+  margin: 0 auto;
+  justify-items: center;
+}
 
   h1 {
     font-size: 2rem;
