@@ -1,15 +1,15 @@
-.store-container {
-  min-height: 100vh;
-  background-color: #111;
-  padding: 6em 2em 0em 2em;
-}
-
 h1 {
   color: #ff0033;
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 2em;
   font-family: 'Montserrat', sans-serif;
+}
+
+.store-container {
+  min-height: 100vh;
+  background-color: #111;
+  padding: 6em 2em 0em 2em;
 }
 
 .product-grid {
@@ -29,6 +29,7 @@ h1 {
   overflow: hidden;
   transition: transform 0.3s, box-shadow 0.3s;
   cursor: pointer;
+  max-width: 400px; 
 }
 
 .product-card:hover {
@@ -73,6 +74,13 @@ h1 {
 
 .view-details:hover {
   background-color: #00ffcc;
+}
+
+.stock-info {
+  color: #ff0033;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+  font-size: 0.95rem;
 }
 
 @media (max-width: 768px) {

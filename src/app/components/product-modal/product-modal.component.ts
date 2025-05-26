@@ -11,19 +11,24 @@ import { ToastComponent } from '../toast/toast.component';
 export class ProductModalComponent implements OnInit {
   @Input() product: any;
   @Output() close = new EventEmitter<void>();
+  @ViewChild('toast') toast!: ToastComponent;
+
   selectedSize: string = '';
   currentImage: string = '';
   currencyCode: string = 'BRL';
-  @ViewChild('toast') toast!: ToastComponent;
+  availableSizes: string[] = [];
 
   constructor(
     private cartService: CartService,
     private translate: TranslateService
-  ) {}
+  ) { }
 
   ngOnInit() {
     if (this.product) {
       this.currentImage = this.product.imageUrl;
+      this.availableSizes = (Object.entries(this.product.stock) as [string, number][])
+        .filter(([_, qty]) => qty > 0)
+        .map(([size]) => size);
     }
 
     this.setCurrencyCode(this.translate.currentLang);
@@ -47,6 +52,10 @@ export class ProductModalComponent implements OnInit {
   toggleImage() {
     this.currentImage =
       this.currentImage === this.product.imageUrl ? this.product.imageUrl2 : this.product.imageUrl;
+  }
+
+   hasAvailableStock(product: any): boolean {
+    return Object.values(product.stock as Record<string, number>).some(qty => qty > 0);
   }
 
   addToCart() {
