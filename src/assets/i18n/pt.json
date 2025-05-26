@@ -56,7 +56,8 @@
     "CARD_NAME": "Nome no cartão",
     "EXPIRY": "Validade (MM/AA)",
     "CVV": "CVV",
-    "PLACE_ORDER": "Finalizar pedido"
+    "PLACE_ORDER": "Finalizar pedido",
+    "EMPTY_CART": "Seu carrinho está vazio"
   },
     "CART": {
     "CART": "CARRINHO",
