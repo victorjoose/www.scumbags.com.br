@@ -1,6 +1,6 @@
 <div class="modal-overlay" (click)="closeModal()">
-  <app-toast #toast></app-toast>
   <div class="modal-content" (click)="$event.stopPropagation()">
+    <app-toast #toast></app-toast>
     <button class="close-button" (click)="closeModal()">✕</button>
 
     <div class="product-details">
@@ -12,27 +12,6 @@
       <div class="product-info">
         <h2>{{ product.nameKey | translate }}</h2>
         <p class="price">{{ getProductPrice() | currency: currencyCode }}</p>
-
-        <!-- <button
-          *ngFor="let size of availableSizes"
-          [disabled]="product.stock[size] === 0"
-          [class.selected]="selectedSize === size"
-          (click)="selectedSize = size">
-          {{ 'SCUMSTORE.SIZE_' + size | translate }}
-          <span *ngIf="product.stock[size] === 0"> - {{ 'SCUMSTORE.SOLD_OUT' | translate }}</span>
-        </button> -->
-        
-        <!-- <div class="size-selector">
-          <label>{{ 'SCUMSTORE.SELECT_SIZE' | translate }}</label>
-          <div class="size-options">
-            <button *ngFor="let size of product.sizes"
-                    [class.selected]="selectedSize === size"
-                    (click)="selectedSize = size">
-              {{ 'SCUMSTORE.SIZE_' + size | translate }}
-            </button>
-          </div>
-        </div> -->
-
         <div class="size-selector">
           <label>{{ 'SCUMSTORE.SELECT_SIZE' | translate }}</label>
           <div class="size-options">

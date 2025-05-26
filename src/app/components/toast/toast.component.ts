@@ -3,7 +3,9 @@ import { Component, Input } from '@angular/core';
 @Component({
   selector: 'app-toast',
   template: `
-    <div *ngIf="visible" class="toast">{{ message }}</div>
+    <div *ngIf="visible" class="toast">
+      <div>{{ message }}</div>
+    </div>
   `,
   styleUrls: ['./toast.component.css']
 })
