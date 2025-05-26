@@ -20,7 +20,9 @@
     </div>
 
     <ng-template #emptyCart>
-      <p>{{ 'SCUMSTORE.EMPTY_CART' | translate }}</p>
+      <div class="empty-cart">
+        <h1>{{ 'SCUMSTORE.EMPTY_CART' | translate }}</h1>
+      </div>
     </ng-template>
 
     <form *ngIf="cartItems.length > 0" (ngSubmit)="submitCheckout()" #checkoutForm="ngForm" class="checkout-form">
