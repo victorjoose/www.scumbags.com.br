@@ -49,9 +49,9 @@ export class CheckoutComponent implements OnInit {
   }
 
   submitCheckout() {
-    // if (!this.isFormValid()) {
-    //   return;
-    // }
+    if (!this.isFormValid()) {
+      return;
+    }
 
     const order = {
       items: this.cartItems,

@@ -62,7 +62,7 @@ export class ProductModalComponent implements OnInit {
     if (this.selectedSize) {
       this.cartService.addToCart(this.product, this.selectedSize);
       this.toast?.show('Item adicionado ao carrinho!');
-      this.closeModal();
+      setTimeout(() => this.closeModal(), 1500); // pequeno delay para o toast aparecer
     }
   }
 }
