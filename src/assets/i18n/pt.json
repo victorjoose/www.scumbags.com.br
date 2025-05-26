@@ -57,7 +57,9 @@
     "EXPIRY": "Validade (MM/AA)",
     "CVV": "CVV",
     "PLACE_ORDER": "Finalizar pedido",
-    "EMPTY_CART": "Seu carrinho está vazio"
+    "EMPTY_CART": "Seu carrinho está vazio",
+    "OUT_OF_STOCK": "Esgotado",
+    "SOLD_OUT": "Indisponível"
   },
     "CART": {
     "CART": "CARRINHO",
