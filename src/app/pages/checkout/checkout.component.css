@@ -140,6 +140,17 @@ h2 {
   flex: 1;
 }
 
+.empty-cart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+  flex: 1;
+}
+
 /* Responsivo */
 @media (max-width: 900px) {
   .checkout-container {

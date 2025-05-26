@@ -56,7 +56,8 @@
     "CARD_NAME": "Name on Card",
     "EXPIRY": "Expiry (MM/YY)",
     "CVV": "CVV",
-    "PLACE_ORDER": "Place Order"
+    "PLACE_ORDER": "Place Order",
+    "EMPTY_CART": "Your cart is empty"
   },
   "CART": {
     "CART": "CART",
