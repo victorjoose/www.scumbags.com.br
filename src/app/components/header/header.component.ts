@@ -17,7 +17,6 @@ export class HeaderComponent implements OnInit {
   altText = 'Portuguese Flag';
   languageLabel = 'Português';
   cartItemCount = 0;
-  showCart = false;
 
   constructor(
     private languageService: LanguageService,
@@ -39,13 +38,6 @@ export class HeaderComponent implements OnInit {
         this.languageLabel = 'Português';
       }
     });
-
-    this.router.events.subscribe(event => {
-      if (event instanceof NavigationEnd) {
-        this.showCart = event.urlAfterRedirects.includes('/store');
-      }
-    });
-
 
     this.cartService.cart$.subscribe(items => {
       this.cartItemCount = items.length;

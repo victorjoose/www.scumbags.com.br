@@ -1,13 +1,12 @@
 <div class="store-container">
   <h1>{{ 'SCUMSTORE.SCUMSTORE' | translate }}</h1>
-  
+
   <div class="product-grid">
     <div *ngFor="let product of products" class="product-card" (click)="openProductModal(product.id)">
-      <img [src]="product.imageUrl" alt="{{ product.nameKey | translate }}" />
-      <h2>{{ product.nameKey | translate }}</h2>
-      <p class="price">{{ getProductPrice(product) | currency: currencyCode }}</p>
-      <button class="view-details">{{ 'SCUMSTORE.VIEW_DETAILS' | translate }}</button>
-    </div>
+    <img [src]="product.imageUrl" alt="{{ product.nameKey | translate }}" />
+    <h2>{{ product.nameKey | translate }}</h2>
+    <p class="price">{{ getProductPrice(product) | currency: currencyCode }}</p>
+    <button class="view-details">{{ 'SCUMSTORE.VIEW_DETAILS' | translate }}</button>
   </div>
 </div>
 

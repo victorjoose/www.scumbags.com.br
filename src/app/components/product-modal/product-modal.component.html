@@ -13,7 +13,16 @@
         <h2>{{ product.nameKey | translate }}</h2>
         <p class="price">{{ getProductPrice() | currency: currencyCode }}</p>
 
-        <div class="size-selector">
+        <!-- <button
+          *ngFor="let size of availableSizes"
+          [disabled]="product.stock[size] === 0"
+          [class.selected]="selectedSize === size"
+          (click)="selectedSize = size">
+          {{ 'SCUMSTORE.SIZE_' + size | translate }}
+          <span *ngIf="product.stock[size] === 0"> - {{ 'SCUMSTORE.SOLD_OUT' | translate }}</span>
+        </button> -->
+        
+        <!-- <div class="size-selector">
           <label>{{ 'SCUMSTORE.SELECT_SIZE' | translate }}</label>
           <div class="size-options">
             <button *ngFor="let size of product.sizes"
@@ -22,9 +31,28 @@
               {{ 'SCUMSTORE.SIZE_' + size | translate }}
             </button>
           </div>
+        </div> -->
+
+        <div class="size-selector">
+          <label>{{ 'SCUMSTORE.SELECT_SIZE' | translate }}</label>
+          <div class="size-options">
+            <button
+              *ngFor="let size of product.sizes"
+              [disabled]="product.stock[size] === 0"
+              [class.selected]="selectedSize === size"
+              [class.sold-out]="product.stock[size] === 0"
+              (click)="product.stock[size] > 0 && (selectedSize = size)">
+              {{ 'SCUMSTORE.SIZE_' + size | translate }}
+            </button>
+          </div>
         </div>
 
-        <button class="add-to-cart" [disabled]="!selectedSize" (click)="addToCart()">
+        <label class="stock-info" *ngIf="!hasAvailableStock(product)">
+          {{ 'SCUMSTORE.OUT_OF_STOCK' | translate }}
+        </label>
+
+
+        <button class="add-to-cart" [disabled]="!selectedSize || product.stock[selectedSize] === 0" (click)="addToCart()">
           {{ 'SCUMSTORE.ADD_TO_CART' | translate }}
         </button>
       </div>
