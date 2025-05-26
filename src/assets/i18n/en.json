@@ -57,7 +57,9 @@
     "EXPIRY": "Expiry (MM/YY)",
     "CVV": "CVV",
     "PLACE_ORDER": "Place Order",
-    "EMPTY_CART": "Your cart is empty"
+    "EMPTY_CART": "Your cart is empty",
+    "OUT_OF_STOCK": "Out of Stock",
+    "SOLD_OUT": "Sold Out"
   },
   "CART": {
     "CART": "CART",

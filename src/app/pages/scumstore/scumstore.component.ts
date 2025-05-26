@@ -19,7 +19,8 @@ export class ScumstoreComponent {
       priceBrl: 90.00, 
       imageUrl: 'assets/imgs/store/tee-1-a.jpg',
       imageUrl2: 'assets/imgs/store/tee-1-b.jpg',
-      sizes: ['S', 'M', 'L', 'XL']
+      sizes: ['S', 'M', 'L', 'XL'],
+      stock: { S: 2, M: 0, L: 3, XL: 0 }
     },
     { 
       id: 2,
@@ -28,7 +29,8 @@ export class ScumstoreComponent {
       priceBrl: 70.00, 
       imageUrl: 'assets/imgs/store/tee-2-a.jpg',
       imageUrl2: 'assets/imgs/store/tee-2-b.jpg',
-      sizes: ['S', 'M', 'L', 'XL']
+      sizes: ['S', 'M', 'L', 'XL'],
+      stock: { S: 0, M: 0, L: 0, XL: 0 } // esgotado
     },
     { 
       id: 3,
@@ -37,7 +39,8 @@ export class ScumstoreComponent {
       priceBrl: 70.00, 
       imageUrl: 'assets/imgs/store/tee-3-a.jpg',
       imageUrl2: 'assets/imgs/store/tee-3-b.jpg',
-      sizes: ['S', 'M', 'L', 'XL']
+      sizes: ['S', 'M', 'L', 'XL'],
+      stock: { S: 3, M: 2, L: 0, XL: 1 }
     }
   ];
 
@@ -67,6 +70,10 @@ export class ScumstoreComponent {
     return this.currencyCode === 'BRL' ? product.priceBrl : product.priceUsd;
   }
 
+  getSelectedProduct() {
+    return this.products.find(p => p.id === this.selectedProductId);
+  }
+
   openProductModal(productId: number) {
     this.selectedProductId = productId;
     this.showModal = true;
@@ -75,9 +82,5 @@ export class ScumstoreComponent {
   closeModal() {
     this.showModal = false;
     this.selectedProductId = null;
-  }
-
-  getSelectedProduct() {
-    return this.products.find(p => p.id === this.selectedProductId);
   }
 }
