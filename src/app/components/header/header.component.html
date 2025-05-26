@@ -4,12 +4,12 @@
       &#9776;
     </div>
 
-    <a routerLink="/" class="logo-wrapper">
+    <a href="/" class="logo-wrapper">
       <img src="assets/imgs/logos/red-logo.png" alt="Band Logo" class="logo" />
     </a>
 
     <nav class="nav-links" *ngIf="!isMobile">
-      <a (click)="scrollTo('shop')">{{ 'SCUMSTORE.SCUMSTORE' | translate }}</a>
+      <a routerLink="/store">{{ 'SCUMSTORE.SCUMSTORE' | translate }}</a>
       <a (click)="scrollTo('tour')">{{ 'TOUR.TOUR' | translate }}</a>
       <a (click)="openContactModal()">{{ 'CONTACT.CONTACT' | translate }}</a>
     </nav>
@@ -31,7 +31,7 @@
 </header>
 
 <div class="dropdown mobile-dropdown" *ngIf="isMobile && showNavDropdown">
-  <div class="dropdown-item" (click)="scrollTo('shop')">{{ 'SCUMSTORE.SCUMSTORE' | translate }}</div>
+  <div class="dropdown-item" routerLink="/store">{{ 'SCUMSTORE.SCUMSTORE' | translate }}</div>
   <div class="dropdown-item" (click)="scrollTo('tour')">{{ 'TOUR.TOUR' | translate }}</div>
   <div class="dropdown-item" (click)="openContactModal()">{{ 'CONTACT.CONTACT' | translate }}</div>
 </div>
