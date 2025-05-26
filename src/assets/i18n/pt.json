@@ -30,6 +30,7 @@
   },
   "SCUMSTORE": {
     "SCUMSTORE": "SCUMSTORE",
+    "CHECKOUT": "CHECKOUT",
     "COMING_SOON": "Em Breve",
     "RAT_ABDUCTION": "Rato Abduzido",
     "RAT_OVERLAY_BLACK": "Rato Sobreposto Preto",
@@ -37,6 +38,28 @@
     "VIEW_DETAILS": "Ver Detalhes",
     "CLICK_TO_VIEW": "Clique para ver imagem alternativa",
     "SELECT_SIZE": "Selecione o Tamanho",
-    "ADD_TO_CART": "Adicionar ao Carrinho"
+    "ADD_TO_CART": "Adicionar ao Carrinho",
+    "SIZE_S": "P",
+    "SIZE_M": "M",
+    "SIZE_L": "G",
+    "SIZE_XL": "GG",
+    "ADDRESS": "Endereço",
+    "BUYER_INFORMATION": "Informações do comprador",
+    "PAYMENT_INFORMATION": "Informações de pagamento",
+    "NAME": "Nome",
+    "EMAIL": "E-mail",
+    "STREET": "Rua",
+    "CITY": "Cidade",
+    "STATE": "Estado",
+    "ZIP": "CEP",
+    "CARD_NUMBER": "Número do cartão",
+    "CARD_NAME": "Nome no cartão",
+    "EXPIRY": "Validade (MM/AA)",
+    "CVV": "CVV",
+    "PLACE_ORDER": "Finalizar pedido"
+  },
+    "CART": {
+    "CART": "CARRINHO",
+    "REMOVE": "REMOVER"
   }
 }

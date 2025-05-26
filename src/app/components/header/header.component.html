@@ -12,6 +12,15 @@
       <a routerLink="/store">{{ 'SCUMSTORE.SCUMSTORE' | translate }}</a>
       <a (click)="scrollTo('tour')">{{ 'TOUR.TOUR' | translate }}</a>
       <a (click)="openContactModal()">{{ 'CONTACT.CONTACT' | translate }}</a>
+      <div *ngIf="showCart" class="cart-button-wrapper">
+        <button class="cart-button" routerLink="/checkout">
+          <a class="cart-label">{{ 'CART.CART' | translate }}</a>
+          <span class="cart-icon-wrapper">
+            🛒
+            <span class="cart-badge" *ngIf="cartItemCount > 0">{{ cartItemCount }}</span>
+          </span>
+        </button>
+      </div>
     </nav>
 
     <div class="lang-toggle" (click)="toggleLanguageDropdown()">
@@ -34,6 +43,12 @@
   <div class="dropdown-item" routerLink="/store">{{ 'SCUMSTORE.SCUMSTORE' | translate }}</div>
   <div class="dropdown-item" (click)="scrollTo('tour')">{{ 'TOUR.TOUR' | translate }}</div>
   <div class="dropdown-item" (click)="openContactModal()">{{ 'CONTACT.CONTACT' | translate }}</div>
+  <div *ngIf="showCart" class="cart-button-wrapper">
+    <button class="cart-button" routerLink="/checkout">
+      Carrinho 🛒
+      <span class="cart-count" *ngIf="cartItemCount > 0">{{ cartItemCount }}</span>
+    </button>
+  </div>
 </div>
 
 <app-contact

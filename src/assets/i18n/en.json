@@ -30,6 +30,7 @@
   },
   "SCUMSTORE": {
     "SCUMSTORE": "SCUMSTORE",
+    "CHECKOUT": "CHECKOUT",
     "COMING_SOON": "Coming Soon",
     "RAT_ABDUCTION": "Rat Abduction",
     "RAT_OVERLAY_BLACK": "Rat Overlay Black",
@@ -37,6 +38,28 @@
     "VIEW_DETAILS": "View Details",
     "CLICK_TO_VIEW": "Click to view alternate image",
     "SELECT_SIZE": "Select Size",
-    "ADD_TO_CART": "Add to Cart"
+    "ADD_TO_CART": "Add to Cart",
+    "SIZE_S": "S",
+    "SIZE_M": "M",
+    "SIZE_L": "L",
+    "SIZE_XL": "XL",
+    "ADDRESS": "Address",
+    "BUYER_INFORMATION": "Buyer Information",
+    "PAYMENT_INFORMATION": "Payment Information",
+    "NAME": "Name",
+    "EMAIL": "Email",
+    "STREET": "Street",
+    "CITY": "City",
+    "STATE": "State",
+    "ZIP": "ZIP Code",
+    "CARD_NUMBER": "Card Number",
+    "CARD_NAME": "Name on Card",
+    "EXPIRY": "Expiry (MM/YY)",
+    "CVV": "CVV",
+    "PLACE_ORDER": "Place Order"
+  },
+  "CART": {
+    "CART": "CART",
+    "REMOVE": "REMOVE"
   }
 }
