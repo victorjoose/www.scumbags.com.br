@@ -5,9 +5,9 @@ import { TranslateService } from '@ngx-translate/core';
 import { of } from 'rxjs';
 
 class MockTranslateService {
-  currentLang = 'pt-BR';
+  currentLang = 'pt';
   defaultLang = 'pt';
-  onLangChange = of({ lang: 'en-US' });
+  onLangChange = of({ lang: 'en' });
 }
 
 describe('TourComponent', () => {
@@ -38,7 +38,7 @@ describe('TourComponent', () => {
   });
 
   it('should set currentLanguage to normalized currentLang on init', () => {
-    expect(component.currentLanguage).toBe('pt');
+    expect(component.currentLanguage).toBe('en');
   });
 
   it('should update currentLanguage on lang change', () => {

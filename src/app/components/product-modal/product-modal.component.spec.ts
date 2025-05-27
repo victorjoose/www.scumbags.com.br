@@ -1,15 +1,13 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
 import { ProductModalComponent } from './product-modal.component';
 import { CartService } from 'src/app/services/cart.service';
-import { TranslateService } from '@ngx-translate/core';
-import { of } from 'rxjs';
 import { TestTranslateModule } from 'tests/test-translate.module';
+import { ToastComponent } from '../toast/toast.component';
 
 describe('ProductModalComponent', () => {
   let component: ProductModalComponent;
   let fixture: ComponentFixture<ProductModalComponent>;
   let cartServiceSpy: jasmine.SpyObj<CartService>;
-  let translateServiceMock: any;
 
   const mockProduct = {
     nameKey: 'CAMISETA_PRETA',
@@ -17,28 +15,17 @@ describe('ProductModalComponent', () => {
     imageUrl2: 'https://example.com/img2.jpg',
     priceBrl: 50,
     priceUsd: 10,
-    stock: {
-      S: 0,
-      M: 2,
-      G: 0
-    },
+    stock: { S: 0, M: 2, G: 0 },
     sizes: ['S', 'M', 'G']
   };
 
   beforeEach(async () => {
     cartServiceSpy = jasmine.createSpyObj('CartService', ['addToCart']);
-    translateServiceMock = {
-      currentLang: 'pt',
-      onLangChange: of({ lang: 'en' })
-    };
 
     await TestBed.configureTestingModule({
-      declarations: [ProductModalComponent],
+      declarations: [ProductModalComponent, ToastComponent],
       imports: [TestTranslateModule],
-      providers: [
-        { provide: CartService, useValue: cartServiceSpy },
-        { provide: TranslateService, useValue: translateServiceMock }
-      ]
+      providers: [{ provide: CartService, useValue: cartServiceSpy }]
     }).compileComponents();
 
     fixture = TestBed.createComponent(ProductModalComponent);
@@ -88,15 +75,16 @@ describe('ProductModalComponent', () => {
     expect(cartServiceSpy.addToCart).not.toHaveBeenCalled();
   });
 
-  it('should call addToCart and close modal when size is selected', () => {
-    component.selectedSize = 'M';
-    spyOn(component.toast, 'show');
-    spyOn(component, 'closeModal');
+ it('should call addToCart and close modal when size is selected', fakeAsync(() => {
+  component.selectedSize = 'M';
+  spyOn(component.toast, 'show');
+  spyOn(component, 'closeModal');
 
-    component.addToCart();
+  component.addToCart();
+  tick(3000);
 
-    expect(cartServiceSpy.addToCart).toHaveBeenCalledWith(mockProduct, 'M');
-    expect(component.toast.show).toHaveBeenCalled();
-    expect(component.closeModal).toHaveBeenCalled();
-  });
+  expect(cartServiceSpy.addToCart).toHaveBeenCalledWith(mockProduct, 'M');
+  expect(component.toast.show).toHaveBeenCalled();
+  expect(component.closeModal).toHaveBeenCalled();
+}));
 });
