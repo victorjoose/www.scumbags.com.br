@@ -3,6 +3,8 @@ import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CheckoutComponent } from './checkout.component';
 import { CartService } from 'src/app/services/cart.service';
+import { TestTranslateModule } from 'tests/test-translate.module';
+
 
 describe('CheckoutComponent', () => {
   let component: CheckoutComponent;
@@ -26,7 +28,7 @@ describe('CheckoutComponent', () => {
 
     TestBed.configureTestingModule({
       declarations: [CheckoutComponent],
-      imports: [FormsModule],
+      imports: [FormsModule, TestTranslateModule],
       providers: [
         { provide: CartService, useValue: mockCartService },
         { provide: Router, useValue: mockRouter }

@@ -6,12 +6,13 @@ import { FooterComponent } from './components/footer/footer.component';
 import { LandingComponent } from './components/landing/landing.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { TourComponent } from './components/tour/tour.component';
+import { RouterTestingModule } from '@angular/router/testing';
 import { FormsModule } from '@angular/forms';
 
 describe('AppComponent', () => {
   beforeEach(() => TestBed.configureTestingModule({
     declarations: [AppComponent, HeaderComponent, FooterComponent, LandingComponent, ProductListComponent, TourComponent],
-    imports: [TestTranslateModule, FormsModule]
+    imports: [TestTranslateModule, FormsModule, RouterTestingModule]
   }));
 
   it('should create the app', () => {
