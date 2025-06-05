@@ -135,3 +135,29 @@
   .pidgeon {
     height: 60px;
   }
+
+  .label-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.3em;
+  }
+
+  .label-group label {
+    font-weight: bold;
+    color: #ff0033;
+  }
+
+  .label-group .error {
+    color: #fff;
+    font-size: 0.85rem;
+    margin-left: 1em;
+    margin-top: 1em;
+    white-space: nowrap;
+  }
+
+@media (max-width: 768px) {
+    .modal-content {
+    width: 80%;
+  }
+}

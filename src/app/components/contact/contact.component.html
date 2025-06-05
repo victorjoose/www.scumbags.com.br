@@ -3,23 +3,36 @@
     <button class="close-button" (click)="closeModal()">✕</button>
 
     <div class="contact-header">
-      <img src="assets/imgs/logos/pidgeon3.png" alt="Pidgeon" class="pidgeon" />
+      <img src="assets/imgs/logos/pidgeon3.png" alt="Pidgeon" class="pidgeon" *ngIf="!isMobile" />
       <h2 *ngIf="!emailSent && !emailError">{{ 'CONTACT.CONTACT_TITLE' | translate }}</h2>
-      <img src="assets/imgs/logos/pidgeon3.png" alt="Pidgeon" class="pidgeon" />
+      <img src="assets/imgs/logos/pidgeon3.png" alt="Pidgeon" class="pidgeon" *ngIf="!isMobile" />
     </div>
     
     <form *ngIf="!emailSent && !emailError" (ngSubmit)="sendEmail()">
-      <label for="name">{{ 'CONTACT.YOUR_NAME' | translate }}</label>
-      <input type="text" id="name" [(ngModel)]="name" name="name" required>
+      <div class="label-group">
+        <label for="name">{{ 'CONTACT.YOUR_NAME' | translate }}</label>
+        <span class="error" *ngIf="errors.name">Nome obrigatório.</span>
+      </div>
+      <input type="text" id="name" [(ngModel)]="name" name="name">
 
-      <label for="email">{{ 'CONTACT.YOUR_EMAIL' | translate }}</label>
-      <input type="email" id="email" [(ngModel)]="email" name="email" required>
+      <div class="label-group">
+        <label for="email">{{ 'CONTACT.YOUR_EMAIL' | translate }}</label>
+        <span class="error" *ngIf="errors.email">E-mail obrigatório.</span>
+        <span class="error" *ngIf="errors.invalidEmail">E-mail inválido.</span>
+      </div>
+      <input type="email" id="email" [(ngModel)]="email" name="email">
 
-      <label for="title">{{ 'CONTACT.EMAIL_TITLE' | translate }}</label>
-      <input type="text" id="title" [(ngModel)]="title" name="title" required>
+      <div class="label-group">
+        <label for="title">{{ 'CONTACT.EMAIL_TITLE' | translate }}</label>
+        <span class="error" *ngIf="errors.title">Título obrigatório.</span>
+      </div>
+      <input type="text" id="title" [(ngModel)]="title" name="title">
 
-      <label for="text">{{ 'CONTACT.EMAIL_SUBJECT' | translate }}</label>
-      <textarea id="text" [(ngModel)]="text" name="text" required></textarea>
+      <div class="label-group">
+        <label for="text">{{ 'CONTACT.EMAIL_SUBJECT' | translate }}</label>
+        <span class="error" *ngIf="errors.text">Mensagem obrigatória.</span>
+      </div>
+      <textarea id="text" [(ngModel)]="text" name="text"></textarea>
 
       <button type="submit">{{ 'CONTACT.SEND_EMAIL' | translate }}</button>
     </form>

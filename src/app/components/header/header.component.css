@@ -169,7 +169,7 @@ a {
   }
 
   .mobile-dropdown {
-    position: fixed; 
+    position: absolute; 
     transform: translate(5%, 25%);
     width: 80%;
     background-color: #222;
@@ -210,25 +210,6 @@ a {
   padding: 1em;
   color: white;
   cursor: pointer;
-}
-
-.cart-button-wrapper {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
-.cart-button {
-  position: relative;
-  background: none;
-  border: none;
-  color: #ff0033;
-  font-weight: bold;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 1rem;
 }
 
 .cart-icon-wrapper {
