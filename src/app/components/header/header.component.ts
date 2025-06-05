@@ -2,6 +2,7 @@ import { Component, HostListener, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { LanguageService } from 'src/app/services/language.service';
 import { CartService } from 'src/app/services/cart.service';
+import { isMobileScreen } from 'src/app/utils/utils';
 
 @Component({
   selector: 'app-header',
@@ -22,11 +23,11 @@ export class HeaderComponent implements OnInit {
     private languageService: LanguageService,
     private cartService: CartService,
     private router: Router,
-  ) {
-    this.checkScreenSize();
-  }
+  ) {}
 
   ngOnInit() {
+    this.checkScreenSize();
+
     this.languageService.currentLanguage.subscribe((language) => {
       if (language === 'en') {
         this.flagIcon = 'assets/imgs/flags/us.svg';
@@ -50,8 +51,7 @@ export class HeaderComponent implements OnInit {
   }
 
   checkScreenSize() {
-    this.isMobile = window.innerWidth <= 768;
-    if (!this.isMobile) this.showNavDropdown = false;
+    this.isMobile = isMobileScreen();
   }
 
   toggleNavDropdown() {
