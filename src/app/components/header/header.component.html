@@ -4,7 +4,7 @@
       &#9776;
     </div>
 
-    <a href="/" class="logo-wrapper">
+    <a href="/" class="logo-wrapper" *ngIf="!isMobile">
       <img src="assets/imgs/logos/red-logo.png" alt="Band Logo" class="logo" />
     </a>
 
@@ -43,12 +43,10 @@
   <div class="dropdown-item" routerLink="/store">{{ 'SCUMSTORE.SCUMSTORE' | translate }}</div>
   <div class="dropdown-item" (click)="scrollTo('tour')">{{ 'TOUR.TOUR' | translate }}</div>
   <div class="dropdown-item" (click)="openContactModal()">{{ 'CONTACT.CONTACT' | translate }}</div>
-  <div class="cart-button-wrapper">
-    <button class="cart-button" routerLink="/checkout">
-      Carrinho 🛒
-      <span class="cart-count" *ngIf="cartItemCount > 0">{{ cartItemCount }}</span>
-    </button>
-  </div>
+  <a class="dropdown-item" routerLink="/checkout">
+    {{ 'CART.CART' | translate }}
+    <span class="cart-count" *ngIf="cartItemCount > 0">{{ cartItemCount }}</span>
+  </a>
 </div>
 
 <app-contact
