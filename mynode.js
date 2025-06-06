@@ -7,7 +7,7 @@ require('dotenv').config({ path: 'src/.env' });
 const output = process.argv[2] || './src/environments/environment.development.ts';
 
 const envFile = `export const environment = {
-    production: true,
+    production: false,
     MOCK_EMAIL: false,
     VITE_EMAILJS_USER_ID: '${process.env.VITE_EMAILJS_USER_ID}',
     VITE_EMAILJS_SERVICE_ID: '${process.env.VITE_EMAILJS_SERVICE_ID}',
