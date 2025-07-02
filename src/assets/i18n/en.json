@@ -9,7 +9,12 @@
     "SEND_EMAIL": "Send",
     "YOUR_NAME": "Your name",
     "EMAIL_SENT_SUCCESS": "Email sent! Oh Yeah!",
-    "EMAIL_SENT_ERROR": "Email wasn't sent, shit happens!"
+    "EMAIL_SENT_ERROR": "Email wasn't sent, shit happens!",
+    "NAME_REQUIRED": "Name required",
+    "EMAIL_REQUIRED": "Email required",
+    "EMAIL_INVALID": "Invalid email",
+    "TITLE_REQUIRED": "Title required",
+    "TEXT_REQUIRED": "Message required"
   },
   "DISCOGRAPHY": "Discography",
   "TOUR": {
