@@ -41,6 +41,7 @@ Thumbs.db
 
 #Environments
 .env
+/src/environments/environment.development.ts
 
 # Tests
 /coverage
