@@ -15,20 +15,28 @@ export class FooterComponent {
   constructor(private emailService: EmailService) {}
 
   sendSubscriptionEmail() {
+    if (!this.email || this.email.trim() === '') {
+      this.subscriptionError = true;
+      this.resetButtonStateAfterDelay();
+      return;
+    }
+
     const templateParams = {
-      email: this.email,
+      email: this.email.trim(),
     };
+
     this.emailService
-      .sendSubscribeEmail(templateParams)
-      .then(() => {
-        this.subscriptionSent = true;
-        this.resetButtonStateAfterDelay();
-      })
-      .catch(() => {
-        this.subscriptionError = true;
-        this.resetButtonStateAfterDelay();
-      });
+    .sendSubscribeEmail(templateParams)
+    .then(() => {
+      this.subscriptionSent = true;
+      this.resetButtonStateAfterDelay();
+    })
+    .catch(() => {
+      this.subscriptionError = true;
+      this.resetButtonStateAfterDelay();
+    });
   }
+
 
   private resetButtonStateAfterDelay() {
     setTimeout(() => {
