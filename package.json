@@ -3,12 +3,15 @@
   "version": "1.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "node mynode.js && ng serve",
-    "build": "node mynode.js && ng build --configuration production",
+    "start": "node generate-env-config.js && ng serve",
+    "build": "node generate-env-config.js && ng build --configuration production",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "dev": "node mynode.js && ng serve",
-    "test:mynode": "jest mynode.test.js"
+    "dev": "node generate-env-config.js && ng serve",
+    "generate-env-config": "node generate-env-config.js",
+    "test:generate-env-config": "jest tests/generate-env-config.test.js",
+    "test:apis": "jest",
+    "test:apis:coverage": "jest --coverage"
   },
   "private": true,
   "dependencies": {
@@ -22,6 +25,7 @@
     "@angular/router": "^16.2.0",
     "@ngx-translate/core": "^16.0.3",
     "@ngx-translate/http-loader": "^16.0.0",
+    "@supabase/supabase-js": "^2.50.2",
     "dotenv": "^16.4.5",
     "emailjs-com": "^3.2.0",
     "node-fetch": "^3.3.2",
@@ -36,12 +40,16 @@
     "@types/jasmine": "~4.3.0",
     "@types/jest": "^29.5.14",
     "@types/mocha": "^10.0.10",
+    "@types/node": "^24.0.8",
+    "@vercel/node": "^5.3.0",
     "jasmine-core": "~4.6.0",
+    "jest": "^29.7.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "node-mocks-http": "^1.17.2",
     "typescript": "~5.1.3"
   }
 }
