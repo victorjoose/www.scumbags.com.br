@@ -81,7 +81,7 @@ describe('ProductModalComponent', () => {
   spyOn(component, 'closeModal');
 
   component.addToCart();
-  tick(3000);
+  tick(1500);
 
   expect(cartServiceSpy.addToCart).toHaveBeenCalledWith(mockProduct, 'M');
   expect(component.toast.show).toHaveBeenCalled();

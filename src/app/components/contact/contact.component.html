@@ -3,9 +3,9 @@
     <button class="close-button" (click)="closeModal()">✕</button>
 
     <div class="contact-header">
-      <img src="assets/imgs/logos/pidgeon3.png" alt="Pidgeon" class="pidgeon" *ngIf="!isMobile" />
+      <img src="assets/imgs/logos/pigeon.png" alt="pigeon" class="pigeon" *ngIf="!isMobile" />
       <h2 *ngIf="!emailSent && !emailError">{{ 'CONTACT.CONTACT_TITLE' | translate }}</h2>
-      <img src="assets/imgs/logos/pidgeon3.png" alt="Pidgeon" class="pidgeon" *ngIf="!isMobile" />
+      <img src="assets/imgs/logos/pigeon.png" alt="pigeon" class="pigeon" *ngIf="!isMobile" />
     </div>
     
     <form *ngIf="!emailSent && !emailError" (ngSubmit)="sendEmail()">
