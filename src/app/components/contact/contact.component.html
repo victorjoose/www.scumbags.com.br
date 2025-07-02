@@ -14,7 +14,18 @@
         <span class="error" *ngIf="errors.name">Nome obrigatório.</span>
       </div>
       <input type="text" id="name" [(ngModel)]="name" name="name">
+      <div class="label-group">
+        <label for="name">{{ 'CONTACT.YOUR_NAME' | translate }}</label>
+        <span class="error" *ngIf="errors.name">Nome obrigatório.</span>
+      </div>
+      <input type="text" id="name" [(ngModel)]="name" name="name">
 
+      <div class="label-group">
+        <label for="email">{{ 'CONTACT.YOUR_EMAIL' | translate }}</label>
+        <span class="error" *ngIf="errors.email">E-mail obrigatório.</span>
+        <span class="error" *ngIf="errors.invalidEmail">E-mail inválido.</span>
+      </div>
+      <input type="email" id="email" [(ngModel)]="email" name="email">
       <div class="label-group">
         <label for="email">{{ 'CONTACT.YOUR_EMAIL' | translate }}</label>
         <span class="error" *ngIf="errors.email">E-mail obrigatório.</span>
@@ -27,7 +38,17 @@
         <span class="error" *ngIf="errors.title">Título obrigatório.</span>
       </div>
       <input type="text" id="title" [(ngModel)]="title" name="title">
+      <div class="label-group">
+        <label for="title">{{ 'CONTACT.EMAIL_TITLE' | translate }}</label>
+        <span class="error" *ngIf="errors.title">Título obrigatório.</span>
+      </div>
+      <input type="text" id="title" [(ngModel)]="title" name="title">
 
+      <div class="label-group">
+        <label for="text">{{ 'CONTACT.EMAIL_SUBJECT' | translate }}</label>
+        <span class="error" *ngIf="errors.text">Mensagem obrigatória.</span>
+      </div>
+      <textarea id="text" [(ngModel)]="text" name="text"></textarea>
       <div class="label-group">
         <label for="text">{{ 'CONTACT.EMAIL_SUBJECT' | translate }}</label>
         <span class="error" *ngIf="errors.text">Mensagem obrigatória.</span>
