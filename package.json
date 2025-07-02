@@ -9,7 +9,7 @@
     "test": "ng test",
     "dev": "node generate-env-config.js && ng serve",
     "generate-env-config": "node generate-env-config.js",
-    "test:generate-env-config": "jest generate-env-config.test.js",
+    "test:generate-env-config": "jest tests/generate-env-config.test.js",
     "test:apis": "jest",
     "test:apis:coverage": "jest --coverage"
   },

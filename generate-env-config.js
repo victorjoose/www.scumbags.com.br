@@ -2,9 +2,12 @@ const fs = require('fs');
 const path = require('path');
 const successColor = '\x1b[32m%s\x1b[0m';
 const checkSign = '\u{2705}';
-require('dotenv').config();
 
 const output = process.argv[2] || './src/environments/environment.development.ts';
+
+const envFilePath = process.argv[3] || path.join(__dirname, '.env');
+
+require('dotenv').config({ path: envFilePath });
 
 const envFile = `export const environment = {
   production: true,
