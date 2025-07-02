@@ -1,27 +1,109 @@
-# Scumbags
+# Scumbags Website + Scumstore
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.3.
+Este repositório contém o código-fonte do site oficial da banda Scumbags, incluindo a **Scumstore**, uma loja online integrada para comercialização de produtos oficiais.
 
-## Development server
+---
 
-Run `npm run dev` for a dev server. This script generates the environment file before starting the server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Tecnologias Utilizadas
 
-## Code scaffolding
+### Front-end
+- Angular 16
+- @ngx-translate para internacionalização (PT-BR e EN)
+- SCSS + HTML5 responsivo
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Back-end (Serverless)
+- Node.js com funções serverless (Vercel)
+- Supabase (PostgreSQL e autenticação)
+- EmailJS (envio de e-mails via frontend)
 
-## Build
+### Testes
+- Jest (testes unitários e de API)
+- Karma + Jasmine (testes Angular)
+- Postman (testes de integração)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+---
 
-## Running unit tests
+## Funcionalidades
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- Exibição de produtos por categoria (camisetas, CDs, bonés etc.)
+- Carrinho de compras com suporte a múltiplos itens e variações
+- Integração com Supabase para persistência dos dados
+- Localização da interface por idioma
+- Envio de pedidos e mensagens via EmailJS
 
-## Running end-to-end tests
+---
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Executando Localmente
 
-## Further help
+### Requisitos
+- Node.js 18+
+- Angular CLI
+- Conta no Supabase
+- Arquivo `.env.local` com as variáveis:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```env
+SUPABASE_URL=https://<your-project>.supabase.co
+SUPABASE_ANON_KEY=<your-anon-key>
+```
+
+### Instalação e Execução
+
+```bash
+npm install
+npm run dev
+```
+
+> O script `generate-env-config.js` é responsável por repassar variáveis de ambiente ao Angular.
+
+---
+
+## Testes
+
+### Unitários (Angular)
+
+```bash
+npm run test
+```
+
+### API (Jest)
+
+```bash
+npm run test:apis
+```
+
+### Com cobertura
+
+```bash
+npm run test:apis:coverage
+```
+
+---
+
+## Estrutura
+
+```
+├── api/                  # Funções serverless (insert, list, delete)
+├── src/                  # Código Angular
+├── tests/                # Testes unitários das APIs
+├── .env.local
+├── generate-env-config.js
+```
+
+---
+
+## Métricas de Testes
+
+| Tipo        | Qtde | Status   |
+|-------------|------|----------|
+| Unitários   | 13   | Aprovado |
+| Integração  | 2    | Aprovado |
+| API         | 3    | Aprovado |
+| Usabilidade | 3    | Aprovado |
+
+Cobertura estimada: **~85%**
+
+---
+
+## Licença
+
+Este projeto é público e pode ser usado como referência educacional ou portfólio técnico.
