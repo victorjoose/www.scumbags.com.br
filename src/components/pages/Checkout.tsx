@@ -1,19 +1,13 @@
 import { useState } from 'react';
-import { useTranslation } from 'react-i18next';
+
 import { useCart } from '../../contexts/CartContext';
 import { supabase } from '../../services/supabase';
 
-// Mock function for API call (will implement next)
-async function createOrder(orderData: any, items: any[]) {
-    // This will eventually call our Vercel function
-    // For now, we simulate success
-    console.log("Creating order with:", orderData, items);
-    return { paymentUrl: 'https://abacatepay.com/pay/mock-id' };
-}
+// createOrder removed as it was unused and logic is implemented in handleSubmit
 
 export function Checkout() {
-  const { t } = useTranslation();
-  const { items, cartTotal, clearCart } = useCart();
+  /* const { t } = useTranslation(); removed */
+  const { items, cartTotal } = useCart();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   
