@@ -1,109 +1,73 @@
-# Scumbags Website + Scumstore
+# React + TypeScript + Vite
 
-Este repositório contém o código-fonte do site oficial da banda Scumbags, incluindo a **Scumstore**, uma loja online integrada para comercialização de produtos oficiais.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
----
+Currently, two official plugins are available:
 
-## Tecnologias Utilizadas
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-### Front-end
-- Angular 16
-- @ngx-translate para internacionalização (PT-BR e EN)
-- SCSS + HTML5 responsivo
+## React Compiler
 
-### Back-end (Serverless)
-- Node.js com funções serverless (Vercel)
-- Supabase (PostgreSQL e autenticação)
-- EmailJS (envio de e-mails via frontend)
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-### Testes
-- Jest (testes unitários e de API)
-- Karma + Jasmine (testes Angular)
-- Postman (testes de integração)
+## Expanding the ESLint configuration
 
----
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-## Funcionalidades
+```js
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
 
-- Exibição de produtos por categoria (camisetas, CDs, bonés etc.)
-- Carrinho de compras com suporte a múltiplos itens e variações
-- Integração com Supabase para persistência dos dados
-- Localização da interface por idioma
-- Envio de pedidos e mensagens via EmailJS
+      // Remove tseslint.configs.recommended and replace with this
+      tseslint.configs.recommendedTypeChecked,
+      // Alternatively, use this for stricter rules
+      tseslint.configs.strictTypeChecked,
+      // Optionally, add this for stylistic rules
+      tseslint.configs.stylisticTypeChecked,
 
----
-
-## Executando Localmente
-
-### Requisitos
-- Node.js 18+
-- Angular CLI
-- Conta no Supabase
-- Arquivo `.env.local` com as variáveis:
-
-```env
-SUPABASE_URL=https://<your-project>.supabase.co
-SUPABASE_ANON_KEY=<your-anon-key>
+      // Other configs...
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
 ```
 
-### Instalação e Execução
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-```bash
-npm install
-npm run dev
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x'
+import reactDom from 'eslint-plugin-react-dom'
+
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+      // Enable lint rules for React
+      reactX.configs['recommended-typescript'],
+      // Enable lint rules for React DOM
+      reactDom.configs.recommended,
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
 ```
-
-> O script `generate-env-config.js` é responsável por repassar variáveis de ambiente ao Angular.
-
----
-
-## Testes
-
-### Unitários (Angular)
-
-```bash
-npm run test
-```
-
-### API (Jest)
-
-```bash
-npm run test:apis
-```
-
-### Com cobertura
-
-```bash
-npm run test:apis:coverage
-```
-
----
-
-## Estrutura
-
-```
-├── api/                  # Funções serverless (insert, list, delete)
-├── src/                  # Código Angular
-├── tests/                # Testes unitários das APIs
-├── .env.local
-├── generate-env-config.js
-```
-
----
-
-## Métricas de Testes
-
-| Tipo        | Qtde | Status   |
-|-------------|------|----------|
-| Unitários   | 13   | Aprovado |
-| Integração  | 2    | Aprovado |
-| API         | 3    | Aprovado |
-| Usabilidade | 3    | Aprovado |
-
-Cobertura estimada: **~85%**
-
----
-
-## Licença
-
-Este projeto é público e pode ser usado como referência educacional ou portfólio técnico.

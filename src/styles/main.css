@@ -1,0 +1,33 @@
+:root {
+  /* Colors - Brutalist Palette */
+  --color-bg: #1c1c1c; /* Lighter dark gray as requested */
+  --color-text: #f0f0f0;
+  --color-accent: #ff0000; /* Standard Punk Red */
+  --color-accent-hover: #cc0000;
+  --color-border: #333333;
+  --color-surface: #111111;
+  --color-surface-hover: #1a1a1a;
+  
+  /* Typography */
+  --font-display: 'Oswald', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'Courier New', monospace;
+
+  /* Spacing */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem; /* Reduced */
+  --space-lg: 2rem; /* Reduced from 3rem */
+  --space-xl: 3rem; /* Reduced from 5rem - User said "padding botton" specifically, this controls most section paddings */
+
+  /* Layout */
+  --container-width: 1200px;
+  --header-height: 60px;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --space-lg: 3rem;
+    --space-xl: 5rem;
+  }
+}
