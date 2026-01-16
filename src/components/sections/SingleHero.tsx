@@ -6,6 +6,7 @@ export function SingleHero() {
   return (
     <section className="single-hero container" id="single-hero">
       <div className="content-stack">
+      <h2 className="section-title">{t('newrelease.title')}</h2>
         <div className="cover-wrapper">
           <a href="https://www.submithub.com/link/scumbags-synthetic-beach" target="_blank" rel="noopener noreferrer">
             <img 
@@ -34,6 +35,11 @@ export function SingleHero() {
           padding-bottom: var(--space-xl);
           display: flex;
           justify-content: center;
+        }
+        .section-title {  
+          font-size: 3rem;
+          margin-bottom: 0 !important;
+          color: var(--color-accent);
         }
         .content-stack {
           display: flex;

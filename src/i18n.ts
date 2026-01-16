@@ -17,7 +17,10 @@ const resources = {
         listen_now: "ESCUTE AGORA"
       },
       media: {
-        title: "ÚLTIMOS LANÇAMENTOS"
+        title: "CLIPES"
+      },
+      newrelease: {
+        title: "NOVO LANÇAMENTO"
       },
       store: {
         title: "LOJA",
@@ -54,6 +57,9 @@ const resources = {
       },
       media: {
         title: "LATEST MEDIA"
+      },
+      newrelease: {
+        title: "NEW RELEASE"
       },
       store: {
         title: "SCUMSTORE",

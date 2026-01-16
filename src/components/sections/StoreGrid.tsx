@@ -22,30 +22,44 @@ export function StoreGrid() {
   useEffect(() => {
     async function fetchProducts() {
       try {
+        // Fetch SKUs and join with parent 'produtos' table to get the type
         const { data, error } = await supabase
             .from('produto_skus')
-            .select('*');
+            .select(`
+                *,
+                produtos (
+                    tipo
+                )
+            `)
+            .eq('ativo', true); // Apenas produtos ativos
         
         if (error) throw error;
         
         if (data) {
-            // Group by name (assuming name differentiates colors/styles)
-            const grouped = (data as ProductSku[]).reduce((acc, sku) => {
-                const existing = acc.find(p => p.name === sku.name);
+            // PRIMEIRO: Filtrar apenas SKUs que têm imagem
+            const skusWithImage = (data as any[]).filter(sku => 
+                sku.image_url && sku.image_url.trim() !== ''
+            );
+
+            // SEGUNDO: Agrupar por nome do produto
+            const grouped = skusWithImage.reduce((acc, sku) => {
+                const existing = acc.find((p: GroupedProduct) => p.name === sku.nome);
+
                 if (existing) {
                     existing.skus.push(sku);
                 } else {
                     acc.push({
-                        id: sku.id, // Using first SKU id as conceptual ID
-                        name: sku.name,
-                        type: "Product", // we could join with products table to get type
+                        id: sku.id, 
+                        name: sku.nome,
+                        type: sku.produtos?.tipo || "Product",
                         price: sku.preco_reais,
-                        image: (sku as any).image_url || '/merch/placeholder.png', // Fallback
+                        image: sku.image_url,
                         skus: [sku]
                     });
                 }
                 return acc;
             }, [] as GroupedProduct[]);
+
             setProducts(grouped);
         }
       } catch (err) {

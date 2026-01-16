@@ -15,6 +15,7 @@ export interface ProductSku {
   cor: string | null;
   preco_reais: number;
   estoque: number;
+  image_url?: string | null;
 }
 
 export interface CartItem {
